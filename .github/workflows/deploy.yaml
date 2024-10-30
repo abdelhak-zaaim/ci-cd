@@ -38,4 +38,10 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          sudo nohup java -jar ~/target/ci-cd-0.0.1-SNAPSHOT.jar > ~/app.log 2>&1 &
+          sudo pkill -f 'java -jar'
+          sleep 10
+          if [ -f ~/target/ci-cd-0.0.1-SNAPSHOT.jar ]; then
+            sudo nohup java -jar ~/target/ci-cd-0.0.1-SNAPSHOT.jar > ~/app.log 2>&1 &
+          else
+            echo "JAR file not found!"
+          fi
