@@ -10,7 +10,7 @@ public class ArithmiticsTest {
         int a = 1;
         int b = 2;
         int result = Arithmitics.add(a, b);
-        assertEquals(2, result);
+        assertEquals(3, result);
     }
 
     @Test
