@@ -39,4 +39,5 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           sudo pkill -f 'java -jar'
+          sleep 5
           sudo nohup java -jar ~/target/ci-cd-0.0.1-SNAPSHOT.jar > ~/app.log 2>&1 &
