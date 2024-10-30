@@ -9,5 +9,5 @@ public class ArithmiticsTest {
         int b = 2;
         int result = Arithmitics.add(a, b);
         assert result == 3;
-    }
+    }     ;
 }
