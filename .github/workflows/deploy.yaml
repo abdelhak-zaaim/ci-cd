@@ -39,4 +39,4 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           pkill -f 'java -jar'
-          nohup java -jar /path/to/deploy/your-app.jar &
+          nohup java -jar ~/target/ci-cd-0.0.1-SNAPSHOT.jar > ~/app.log 2>&1 &
