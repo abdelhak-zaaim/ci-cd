@@ -1,0 +1,23 @@
+name: Check for Trailing Spaces
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  check-trailing-spaces:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Check for trailing spaces
+      run: |
+        if grep -r '[[:blank:]]$' src/; then
+          echo "Trailing spaces found in the code."
+          exit 1
+        else
+          echo "No trailing spaces found."
+        fi
