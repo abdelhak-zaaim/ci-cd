@@ -29,7 +29,7 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "target/*.jar"
-        target: "/path/to/deploy/"
+        target: "~/"
 
     - name: Execute remote commands via SSH
       uses: appleboy/ssh-action@v0.1.3
