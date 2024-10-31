@@ -1,5 +1,6 @@
 package com.zaaim.cicd.controller.services;
 
+import com.zaaim.cicd.services.Arithmitics;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

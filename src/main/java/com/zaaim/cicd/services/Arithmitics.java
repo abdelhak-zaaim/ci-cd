@@ -1,4 +1,5 @@
-package com.zaaim.cicd.controller.services;
+
+package com.zaaim.cicd.services;
 
 public class Arithmitics {
    int abdTogt;
