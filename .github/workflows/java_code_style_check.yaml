@@ -22,4 +22,4 @@ jobs:
 
       - name: Run Checkstyle with custom rules
         run: |
-          java -jar checkstyle-10.8.0-all.jar -c ./etc/checkstyle.xml src/
+          java -jar checkstyle-10.8.0-all.jar -c checkstyle.xml src/
