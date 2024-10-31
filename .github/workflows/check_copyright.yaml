@@ -10,25 +10,28 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Read Copyright Header
+      - name: Read Header
         id: read_header
         run: |
-          # Read the header from the file
           HEADER_CONTENT=$(cat etc/header.txt)
           echo "::set-output name=header::$HEADER_CONTENT"
 
-      - name: Run Copyright Check
+      - name: Check Files for Header
         run: |
-          # Retrieve the header content from the previous step
+          # Retrieve the header content from previous step
           HEADER="${{ steps.read_header.outputs.header }}"
           
-          # Find all Java files and check for the header
-          MISSING_HEADER=$(find src -name "*.java" ! -exec grep -q "$HEADER" {} \; -print)
-          
+          # Find Java files without the header and list them
+          MISSING_HEADER=""
+          for file in $(find src -name "*.java"); do
+            if ! awk 'NR==1,NR==10' "$file" | grep -F -q "$HEADER"; then
+              MISSING_HEADER+="$file\n"
+            fi
+          done
+
           # Fail if any file is missing the correct header
           if [ -n "$MISSING_HEADER" ]; then
-            echo "The following files are missing the required copyright header:"
-            echo "$MISSING_HEADER"
+            echo -e "The following files are missing the required copyright header:\n$MISSING_HEADER"
             exit 1
           else
             echo "All files have the correct copyright header."
