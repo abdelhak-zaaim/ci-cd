@@ -23,6 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @GetMapping("/test")
     public String test() {
-        return "Hello Abdelhak Zaaim new commit test v4";
+        return "Hello blaaa blaa";
     }
 }
