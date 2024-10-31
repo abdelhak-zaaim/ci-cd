@@ -44,7 +44,7 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          docker load -i ~/ci-cd-latest.tar
-          docker stop ci-cd-container || true
-          docker rm ci-cd-container || true
-          docker run -d --name ci-cd-container -p 80:80 ci-cd:latest
+          sudo docker load -i ~/ci-cd-latest.tar
+          sudo docker stop ci-cd-container || true
+          sudo docker rm ci-cd-container || true
+          sudo docker run -d --name ci-cd-container -p 80:80 ci-cd:latest
