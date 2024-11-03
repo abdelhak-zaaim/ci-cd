@@ -156,27 +156,6 @@ public class ComplexNumber {
         return b.toString();
     }
 public static void main(String[] args) {
-        ComplexNumber a = new ComplexNumber(1, 2);
-        ComplexNumber b = new ComplexNumber(3, 4);
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
-        System.out.println("a + b = " + a.add(b));
-        System.out.println("a - b = " + a.subtract(b));
-        System.out.println("a * b = " + a.multiply(b));
-        System.out.println("a / b = " + a.divide(b));
-        System.out.println("a * a = " + a.square());
-        System.out.println("sqrt(a) = " + a.sqrt());
-        System.out.println("a^3 = " + a.pow(2));
-        System.out.println("exp(a) = " + a.exp());
-        System.out.println("sin(a) = " + a.sin());
-        System.out.println("cos(a) = " + a.cos());
-        System.out.println("tan(a) = " + a.tan());
-        System.out.println("sinh(a) = " + a.sinh());
-        System.out.println("cosh(a) = " + a.cosh());
-        System.out.println("tanh(a) = " + a.tanh());
-        System.out.println("asin(a) = " + a.asin());
-        System.out.println("acos(a) = " + a.acos());
-        System.out.println("atan(a) = " + a.atan());
-        System.out.println("log(a) = " + a.log());
+    System.out.println(-5|1);
     }
 }
