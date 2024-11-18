@@ -23,6 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @GetMapping("/test")
     public String test() {
-        return "<h1>Abdelhak Zaaim</h1> simple cicd pipeline v5";
+        return "<h1>Abdelhak Zaaim</h1> simple cicd pipeline v2";
     }
 }
